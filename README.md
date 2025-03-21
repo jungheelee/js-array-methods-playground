@@ -36,7 +36,7 @@ https://js-array-methods-playground.vercel.app/
 
 ```bash
 # 저장소 복제
-git clone https://github.com/yourusername/array-methods-app.git
+git clone https://github.com/jungheelee/array-methods-app.git
 
 # 프로젝트 폴더로 이동
 cd array-methods-app
