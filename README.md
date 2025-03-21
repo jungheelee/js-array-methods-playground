@@ -2,6 +2,9 @@
 
 이 애플리케이션은 JavaScript 배열 메서드를 실습할 수 있는 인터랙티브한 학습 도구입니다. JSONPlaceholder API에서 가져온 데이터를 활용하여 다양한 배열 메서드의 동작을 시각적으로 확인할 수 있습니다.
 
+## 웹사이트 보기
+https://js-array-methods-playground.vercel.app/
+
 ## 기능
 
 - JSONPlaceholder API에서 데이터 가져오기
