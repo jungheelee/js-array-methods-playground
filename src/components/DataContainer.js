@@ -39,7 +39,7 @@ function DataContainer({ postsData, setPostsData }) {
 
       // 성공 메시지 표시
       showSuccessMessage("데이터를 성공적으로 가져왔습니다.");
-      
+
       // 버튼 하이라이트 효과 표시
       highlightButton();
     } catch (error) {
@@ -94,7 +94,11 @@ function DataContainer({ postsData, setPostsData }) {
         </div>
       )}
 
-      <div className="button-container" role="group" aria-label="데이터 제어 버튼">
+      <div
+        className="button-container"
+        role="group"
+        aria-label="데이터 제어 버튼"
+      >
         <button
           id="fetchData"
           onClick={fetchPosts}
@@ -122,7 +126,12 @@ function DataContainer({ postsData, setPostsData }) {
       )}
 
       {/* JSON 데이터 표시 */}
-      <pre id="jsonData" className="json-display" aria-label="JSON 데이터 결과" tabIndex="0">
+      <pre
+        id="jsonData"
+        className="json-display"
+        aria-label="JSON 데이터 결과"
+        tabIndex="0"
+      >
         {postsData.length > 0
           ? `총 ${postsData.length}개 항목\n\n${JSON.stringify(postsData.slice(0, 5), null, 2)}...\n\n(처음 5개 항목만 표시)`
           : ""}
