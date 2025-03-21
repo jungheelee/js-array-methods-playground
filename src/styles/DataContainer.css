@@ -1,0 +1,96 @@
+/* 데이터 컨테이너 스타일 */
+.data-container {
+    background-color: white;
+    border-radius: 0.5rem; /* 8px → 0.5rem */
+    padding: 1.25rem; /* 20px → 1.25rem */
+    margin-bottom: 1.875rem; /* 30px → 1.875rem */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 4px 6px → 0.25rem 0.375rem */
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.9375rem; /* 15px → 0.9375rem */
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem; /* 8px 16px → 0.5rem 1rem */
+    border-radius: 0.25rem; /* 4px → 0.25rem */
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    margin: 0.3125rem; /* 5px → 0.3125rem */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#clearData {
+    background-color: #e74c3c;
+}
+
+#clearData:hover {
+    background-color: #c0392b;
+}
+
+/* 버튼 하이라이트 애니메이션 */
+@keyframes buttonPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 0.625rem rgba(52, 152, 219, 0); } /* 10px → 0.625rem */
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+}
+
+.highlight-button {
+    animation: buttonPulse 1s infinite;
+}
+
+/* JSON 데이터 표시 영역 */
+.json-display {
+    background-color: #f8f9fa;
+    border: 0.0625rem solid #ddd; /* 1px → 0.0625rem */
+    border-radius: 0.25rem; /* 4px → 0.25rem */
+    padding: 0.9375rem; /* 15px → 0.9375rem */
+    max-height: 18.75rem; /* 300px → 18.75rem */
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.875rem; /* 14px → 0.875rem */
+    position: relative;
+}
+
+.json-display:empty::before {
+    content: "데이터를 가져오려면 '데이터 가져오기' 버튼을 클릭하세요";
+    color: #999;
+    font-style: italic;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 43.75rem) { /* 700px */
+    .data-container {
+        padding: 0.9375rem; /* 15px */
+        margin-bottom: 1.25rem; /* 20px */
+    }
+    
+    .button-container {
+        flex-wrap: wrap;
+    }
+    
+    button {
+        padding: 0.375rem 0.75rem; /* 6px 12px */
+        margin: 0.25rem; /* 4px */
+    }
+    
+    .json-display {
+        max-height: 15.625rem; /* 250px */
+        padding: 0.75rem; /* 12px */
+        font-size: 0.8125rem; /* 13px */
+    }
+}
