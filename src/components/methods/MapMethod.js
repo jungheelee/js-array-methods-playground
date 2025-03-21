@@ -89,6 +89,7 @@ function MapMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -103,20 +104,22 @@ function MapMethod({ postsData, validateData }) {
         </div>
       )}
       
-      <div className="method-controls">
+      <div className="method-controls" role="group" aria-label="map 메서드 제어">
+        <label htmlFor="mapType" className="sr-only">변환 유형 선택:</label>
         <select 
           id="mapType"
           value={mapType}
           onChange={(e) => setMapType(e.target.value)}
+          aria-label="변환 유형 선택"
         >
           <option value="titles">제목만 추출</option>
           <option value="upperCase">제목 대문자로 변환</option>
           <option value="custom">제목과 본문 첫 20자</option>
         </select>
-        <button id="runMap" onClick={runMap}>실행</button>
+        <button id="runMap" onClick={runMap} type="button">실행</button>
       </div>
       
-      <pre className="result" id="mapResult" role='document'>
+      <pre className="result" id="mapResult" role="region" aria-live="polite" tabIndex="0" aria-label="map 메서드 결과">
         {result}
       </pre>
     </div>

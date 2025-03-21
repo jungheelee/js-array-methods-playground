@@ -104,6 +104,7 @@ function FindMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -128,8 +129,8 @@ function FindMethod({ postsData, validateData }) {
           value={findId}
           onChange={(e) => setFindId(parseInt(e.target.value))}
         />
-        <button id="runFind" onClick={runFind}>find() 실행</button>
-        <button id="runFindIndex" onClick={runFindIndex}>findIndex() 실행</button>
+        <button id="runFind" onClick={runFind} type="button">find() 실행</button>
+        <button id="runFindIndex" onClick={runFindIndex} type="button">findIndex() 실행</button>
       </div>
       
       <pre className="result" id="findResult">

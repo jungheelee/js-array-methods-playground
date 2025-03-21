@@ -224,6 +224,7 @@ function CheckMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -238,28 +239,32 @@ function CheckMethod({ postsData, validateData }) {
         </div>
       )}
       
-      <div className="method-controls">
+      <div className="method-controls" role="group" aria-label="체크 메서드 제어">
+        <label htmlFor="checkType" className="sr-only">검사 유형 선택:</label>
         <select 
           id="checkType"
           value={checkType}
           onChange={(e) => setCheckType(e.target.value)}
+          aria-label="검사 유형 선택"
         >
           <option value="titleLength">제목 길이 &gt; 20자</option>
           <option value="containsWord">제목에 특정 단어 포함</option>
           <option value="both">제목 길이 &gt; 20자 AND 특정 단어 포함</option>
         </select>
+        <label htmlFor="checkWord" className="sr-only">검색할 단어:</label>
         <input 
           type="text" 
           id="checkWord" 
           placeholder="단어 입력" 
           value={checkWord}
           onChange={(e) => setCheckWord(e.target.value)}
+          aria-label="검색할 단어 입력"
         />
-        <button id="runEvery" onClick={runEvery}>every() 실행</button>
-        <button id="runSome" onClick={runSome}>some() 실행</button>
+        <button id="runEvery" onClick={runEvery} type="button">every() 실행</button>
+        <button id="runSome" onClick={runSome} type="button">some() 실행</button>
       </div>
       
-      <pre className="result" id="checkResult">
+      <pre className="result" id="checkResult" aria-live="polite" tabIndex="0" aria-label="체크 메서드 결과">
         {result}
       </pre>
     </div>

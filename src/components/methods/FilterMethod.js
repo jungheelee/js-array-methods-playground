@@ -60,6 +60,7 @@ function FilterMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -74,7 +75,7 @@ function FilterMethod({ postsData, validateData }) {
         </div>
       )}
       
-      <div className="method-controls">
+      <div className="method-controls" role="group" aria-label="filter 메서드 제어">
         <label htmlFor="filterUserId">User ID로 필터링:</label>
         <input 
           type="number" 
@@ -83,11 +84,12 @@ function FilterMethod({ postsData, validateData }) {
           max="10" 
           value={filterUserId}
           onChange={(e) => setFilterUserId(parseInt(e.target.value))}
+          aria-describedby="filterInstructions"
         />
-        <button id="runFilter" onClick={runFilter}>실행</button>
+        <button id="runFilter" onClick={runFilter} type="button">실행</button>
       </div>
       
-      <pre className="result" id="filterResult">
+      <pre className="result" id="filterResult" aria-live="polite" tabIndex="0" aria-label="filter 메서드 결과">
         {result}
       </pre>
     </div>

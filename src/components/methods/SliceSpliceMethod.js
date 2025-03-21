@@ -174,6 +174,7 @@ function SliceSpliceMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -207,7 +208,7 @@ function SliceSpliceMethod({ postsData, validateData }) {
           value={sliceEnd}
           onChange={(e) => setSliceEnd(parseInt(e.target.value))}
         />
-        <button id="runSlice" onClick={runSlice}>slice() 실행</button>
+        <button id="runSlice" onClick={runSlice} type="button">slice() 실행</button>
       </div>
       
       <div className="method-controls">
@@ -237,7 +238,7 @@ function SliceSpliceMethod({ postsData, validateData }) {
           value={spliceAdd}
           onChange={(e) => setSpliceAdd(e.target.value)}
         />
-        <button id="runSplice" onClick={runSplice}>splice() 실행</button>
+        <button id="runSplice" onClick={runSplice} type="button">splice() 실행</button>
       </div>
       
       <pre className="result" id="sliceResult">

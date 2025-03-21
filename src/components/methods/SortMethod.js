@@ -88,6 +88,7 @@ function SortMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -113,7 +114,7 @@ function SortMethod({ postsData, validateData }) {
           <option value="titleAsc">제목 오름차순</option>
           <option value="titleDesc">제목 내림차순</option>
         </select>
-        <button id="runSort" onClick={runSort}>실행</button>
+        <button id="runSort" onClick={runSort} type="button">실행</button>
       </div>
       
       <pre className="result" id="sortResult">

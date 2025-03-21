@@ -73,6 +73,7 @@ function ForEachMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -88,7 +89,7 @@ function ForEachMethod({ postsData, validateData }) {
       )}
       
       <div className="method-controls">
-        <button id="runForEach" onClick={runForEach}>포스트별 글자수 계산</button>
+        <button id="runForEach" onClick={runForEach} type="button">포스트별 글자수 계산</button>
       </div>
       
       <pre className="result" id="forEachResult">

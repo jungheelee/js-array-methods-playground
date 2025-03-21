@@ -11,9 +11,9 @@ function App() {
   const [postsData, setPostsData] = React.useState([]);
   
   return (
-    <div className="App">
+    <div className="App" role="application">
       <Header />
-      <main>
+      <main role="main" aria-label="배열 메서드 실습 콘텐츠">
         <DataContainer postsData={postsData} setPostsData={setPostsData} />
         <MethodsContainer postsData={postsData} />
       </main>

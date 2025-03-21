@@ -126,6 +126,7 @@ function ReduceMethod({ postsData, validateData }) {
       <button 
         className="syntax-toggle" 
         onClick={toggleSyntax}
+        type="button"
       >
         {showSyntax ? '구문 정보 닫기' : '구문 정보 보기'}
       </button>
@@ -150,7 +151,7 @@ function ReduceMethod({ postsData, validateData }) {
           <option value="titleLengths">제목 길이 평균</option>
           <option value="wordFrequency">제목에서 단어 빈도 분석</option>
         </select>
-        <button id="runReduce" onClick={runReduce}>실행</button>
+        <button id="runReduce" onClick={runReduce} type="button">실행</button>
       </div>
       
       <pre className="result" id="reduceResult">

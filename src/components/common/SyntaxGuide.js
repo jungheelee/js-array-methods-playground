@@ -23,9 +23,9 @@ const SyntaxGuide = ({
   mdnLink
 }) => {
   return (
-    <div className="syntax-guide">
+    <div className="syntax-guide" role="region" aria-label="메서드 구문 정보">
       <h4>메서드 구문</h4>
-      <pre className="syntax-code">{syntax}</pre>
+      <pre className="syntax-code" tabIndex="0">{syntax}</pre>
       
       {parameters && parameters.length > 0 && (
         <>
@@ -58,13 +58,18 @@ const SyntaxGuide = ({
       {example && (
         <>
           <h4>예제</h4>
-          <pre className="example-code">{example}</pre>
+          <pre className="example-code" tabIndex="0">{example}</pre>
         </>
       )}
       
       {mdnLink && (
         <div className="mdn-link">
-          <a href={mdnLink} target="_blank" rel="noopener noreferrer">
+          <a 
+            href={mdnLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label={`MDN 웹 문서에서 ${methodName} 메서드 자세히 보기 (새 창에서 열림)`}
+          >
             MDN 웹 문서에서 {methodName} 자세히 보기
           </a>
         </div>
